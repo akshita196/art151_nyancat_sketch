@@ -74,6 +74,7 @@ function draw() {
 }
 
 function mousePressed() {
+  userStartAudio(); // make sure the browser's audio is unlocked
   let c = random(colors);
   let newCircle = {
     x: mouseX,
