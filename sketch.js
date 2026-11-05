@@ -38,6 +38,8 @@ async function setup() {
 //background(noNyan);
   // 4. folder named medias, NyanCat needs to be nyanCat
    nyan = await loadSound('medias/nyanCat.mp3');
+  
+  console.log("sound loaded:", nyan);
    // 5. folder named medias, NyanCatless needs to be nyancatless
   // 25. missing semi colon
   noNyan = await loadImage('medias/nyancatless.gif');
@@ -51,11 +53,12 @@ function draw() {
   background(noNyan);
   // Draw all circles
   // 7. changes circels to circles
-  for (let circle of circles) {
+  // 29. renamed circle to cl, because circle is built in p5 function
+  for (let cl of circles) {
     // 26. changed colors to color
-    fill(circle.color); 
+    fill(cl.color); 
     // 17. ellipse spelt wrong
-    ellipse(circle.x, circle.y, 50, 50); 
+    ellipse(cl.x, cl.y, 50, 50); 
   }
   
 
@@ -74,7 +77,6 @@ function draw() {
 }
 
 function mousePressed() {
-  userStartAudio(); // make sure the browser's audio is unlocked
   let c = random(colors);
   let newCircle = {
     x: mouseX,
@@ -87,7 +89,7 @@ function mousePressed() {
   nyan.amp(0.5); 
   // 13. playbakRate needs to be playbackRate
   nyan.rate(playbackRate); 
-  nyan.loop();
+  nyan.play();
   
 }
 function mouseReleased(){
