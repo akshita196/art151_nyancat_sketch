@@ -89,6 +89,7 @@ function mousePressed() {
   nyan.amp(0.5); 
   // 13. playbakRate needs to be playbackRate
   nyan.rate(playbackRate); 
+  // 30. changed look to play because it wasn't playing sound when mouse was pressed
   nyan.play();
   
 }
